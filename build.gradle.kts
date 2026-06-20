@@ -37,6 +37,10 @@ tasks.register("writeCiBuildMatrix") {
             ?.toString()
             ?.substringBefore("+")
             ?: "none"
+        val runMcRuntimeTest = targetProject.findProperty("ciMcRuntimeTest")
+            ?.toString()
+            ?.toBooleanStrictOrNull()
+            ?: true
         val modloader = if (loader == "neo") "neoforge" else loader
         val mcRuntimeTest = when (loader) {
             "forge" -> "lexforge"
@@ -58,10 +62,6 @@ tasks.register("writeCiBuildMatrix") {
         if (!javaVersion.matches(Regex("\\d+"))) {
             throw GradleException("Project '$projectName' has invalid javaVersion '$javaVersion'")
         }
-        if (loader == "fabric" && fabricApiVersion == "none") {
-            throw GradleException("Fabric project '$projectName' must define fabricApiVersion")
-        }
-
         mapOf(
             "subproject" to projectName,
             "loader" to loader,
@@ -71,6 +71,7 @@ tasks.register("writeCiBuildMatrix") {
             "supports_game_test_server" to supportsGameTestServer,
             "run_game_test_server" to (supportsGameTestServer && loader in setOf("forge", "neo")),
             "run_server" to !supportsGameTestServer,
+            "run_mc_runtime_test" to runMcRuntimeTest,
             "modloader" to modloader,
             "mc_runtime_test" to mcRuntimeTest,
             "artifact_regex" to ".*$loader.*",

@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.makaseloli.creativemusicinsurvival.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "MinecraftMusicMixin",
+    "MusicManagerMixin",
+    "WeighedSoundEventsAccessor"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
