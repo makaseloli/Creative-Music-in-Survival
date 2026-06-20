@@ -43,13 +43,13 @@ public final class WebUiServer {
                 }));
                 candidate.start();
                 server = candidate;
-                Constants.LOGGER.info("Creative Music in Survival Web UI is listening on http://127.0.0.1:{}", port);
+                Constants.LOGGER.info("Adaptive Music Control Web UI is listening on http://127.0.0.1:{}", port);
                 return;
             } catch (IOException e) {
                 // Try the next port.
             }
         }
-        Constants.LOGGER.warn("Failed to bind Creative Music in Survival Web UI from port {} upward", BASE_PORT);
+        Constants.LOGGER.warn("Failed to bind Adaptive Music Control Web UI from port {} upward", BASE_PORT);
     }
 
     private static void handle(HttpExchange exchange) throws IOException {

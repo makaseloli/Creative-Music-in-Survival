@@ -1,4 +1,4 @@
-# Creative Music in Survival
+# Adaptive Music Control
 
 Choose which Minecraft music can play in each game mode and dimension.
 
