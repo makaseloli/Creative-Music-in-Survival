@@ -35,6 +35,10 @@ dependencies {
     annotationProcessor("${versionCatalog.module(VersionCatalogLibrary.Mixin)}:${versionCatalog.version(VersionCatalogVersion.Mixin)}:processor")
 }
 
+// Compile version-specific mixins in the Forge project so the Mixin annotation
+// processor can generate the production-name refmap used outside the dev run.
+sourceSets.main.get().java.srcDir(project(commonProject).file("src/main/java"))
+
 sourceSets.main.get().resources {
     srcDir("src/generated/resources")
     exclude("**/*.bbmodel")

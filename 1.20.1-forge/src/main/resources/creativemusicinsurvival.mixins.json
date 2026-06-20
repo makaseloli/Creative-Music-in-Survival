@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "io.github.makaseloli.creativemusicinsurvival.mixin",
+  "refmap": "creativemusicinsurvival.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [],
   "client": [
