@@ -10,7 +10,7 @@ Choose which Minecraft music can play in each game mode and dimension.
 
 Changes are applied immediately. **Reset this page** restores the selected tab's default settings.
 
-The bottom player shows the current track. Use the next button to reroll it.
+The bottom player shows the current track. Use the next button to reroll it.(26.1.2 or later only.)
 
 ![26.x Survival/General](./screenshots/26.x_survival_general.webp)
 ![26.x Survival/Overworld](./screenshots/26.x_survival_overworld.webp)
